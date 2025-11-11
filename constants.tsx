@@ -1,0 +1,81 @@
+import React from 'react';
+import type { Program, Trainer, Testimonial, GalleryImage } from './types';
+
+// FIX: Export GmailIcon component.
+export const GmailIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+    </svg>
+);
+
+// FIX: Export PROGRAMS_DATA constant.
+export const PROGRAMS_DATA: Program[] = [
+    {
+        icon: <span className="text-4xl">💪</span>,
+        title: 'Strength Training',
+        description: 'Build muscle and increase your raw strength with our state-of-the-art equipment and personalized plans.'
+    },
+    {
+        icon: <span className="text-4xl">🏃</span>,
+        title: 'Cardio & Endurance',
+        description: 'Improve your cardiovascular health and stamina with high-intensity interval training and endurance workouts.'
+    },
+    {
+        icon: <span className="text-4xl">🧘</span>,
+        title: 'Yoga & Flexibility',
+        description: 'Enhance your flexibility, balance, and mental clarity through our guided yoga and stretching sessions.'
+    }
+];
+
+// FIX: Export TRAINERS_DATA constant.
+export const TRAINERS_DATA: Trainer[] = [
+    {
+        image: 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Johnathan Doe',
+        specialty: 'Strength & Conditioning'
+    },
+    {
+        image: 'https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Jane Smith',
+        specialty: 'HIIT & Cardio'
+    },
+    {
+        image: 'https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Alex Ray',
+        specialty: 'Yoga & Mobility'
+    },
+    {
+        image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Emily White',
+        specialty: 'CrossFit & Functional Fitness'
+    }
+];
+
+// FIX: Export TESTIMONIALS_DATA constant.
+export const TESTIMONIALS_DATA: Testimonial[] = [
+    {
+        quote: "Joining CFS9 was the best decision I've ever made for my health. The trainers are incredibly supportive and the community is motivating!",
+        name: 'Priya Sharma',
+        memberSince: 'Member since 2022'
+    },
+    {
+        quote: "I've seen amazing results in just a few months. The facilities are top-notch and always clean. Highly recommend to anyone serious about fitness.",
+        name: 'Rohan Verma',
+        memberSince: 'Member since 2023'
+    },
+    {
+        quote: "A fantastic gym with a great atmosphere. I've not only improved my physical strength but also my mental well-being. It feels like a second home.",
+        name: 'Anika Reddy',
+        memberSince: 'Member since 2021'
+    }
+];
+
+// FIX: Export GALLERY_IMAGES constant.
+export const GALLERY_IMAGES: GalleryImage[] = [
+    { src: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man lifting weights' },
+    { src: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man doing pull-ups' },
+    { src: 'https://images.pexels.com/photos/3837464/pexels-photo-3837464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Woman on a rowing machine' },
+    { src: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man working out with battle ropes' },
+    { src: 'https://images.pexels.com/photos/3076516/pexels-photo-3076516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Dumbbells on a rack' },
+    { src: 'https://images.pexels.com/photos/4761799/pexels-photo-4761799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Group fitness class with kettlebells' }
+];
