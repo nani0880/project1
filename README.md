@@ -1,6 +1,6 @@
 # CFS9 Gym - Futuristic Fitness Experience
 
-A cinematic, glassmorphism-driven fitness website featuring scroll-based scene transitions, 3D animations, and neon-glow aesthetics inspired by Cult.fit and Gold's Gym.
+A cinematic, glassmorphism-driven fitness website featuring scroll-based scene transitions, 3D animations, and premium gold aesthetics for the elite Jubilee Hills location.
 
 ## 🚀 Quick Start
 
@@ -24,7 +24,7 @@ npm run preview
 - **3D Flip Cards**: Interactive program cards with smooth 3D rotations
 - **Glassmorphism Design**: Transparent glass surfaces throughout with blur effects
 - **Parallax Effects**: Background images and videos with depth
-- **Neon Glow Aesthetics**: Energy-driven color palette with glow effects
+- **Gold Luxury Aesthetics**: Premium black and gold color palette
 - **Smooth Scroll Transitions**: Scene-based transitions between sections
 - **Animated Social Bar**: Fixed social media bar with sliding labels
 - **Responsive Design**: Fully optimized for all devices
@@ -33,23 +33,26 @@ npm run preview
 ## 🎨 Design System
 
 ### Colors
-- Neon Green: `#00E676`
-- Neon Pink: `#FF4081`
-- Cyan Blue: `#00D1FF`
-- Deep Black: `#0A0A0A`
+- Gold: `#d4af37`
+- Bright Gold: `#f4d03f`
+- Deep Black: `#0a0a0a`
+- Charcoal Grey: `#1c1c1c`
 
 ### Typography
-- Headings: Montserrat (ExtraBold)
-- Body: Poppins (Regular/Medium)
+- Headings: Bebas Neue (Bold)
+- Body: Sora (Regular/Medium)
 
 ## 📱 Sections
 
 1. **Home**: Cinematic hero with video background
-2. **About**: Parallax section with stats and mission
-3. **Programs**: 3D flip cards showcasing training programs
-4. **Gallery**: Image grid with glass overlays
-5. **Contact**: Glass form with embedded map
-6. **Footer**: Glass-styled footer with social links
+2. **About**: Premium training culture and stats
+3. **Founder**: Satish Bachala's story and milestones
+4. **Programs**: Training programs showcase
+5. **Trainers**: Elite coaching team
+6. **Testimonials**: Success stories carousel
+7. **Gallery**: Image grid with glass overlays
+8. **Contact**: Glass form with embedded map
+9. **Footer**: Glass-styled footer with social links
 
 ## 🎬 Motion Features
 
@@ -60,14 +63,19 @@ npm run preview
 - Count-up stat animations
 - Glass hover effects with glow
 - Smooth section transitions
+- GPU-accelerated transforms
 
 ## 🔧 Tech Stack
 
 - React 19.2.0
 - TypeScript
 - Vite
-- Tailwind CSS
 - Custom CSS animations
+- Optimized build configuration
+
+## 📍 Location
+
+CFS9 Gym - Jubilee Hills, Hyderabad 500033
 
 ## 📝 Notes
 
@@ -75,6 +83,7 @@ npm run preview
 - Videos are optimized for performance
 - Glass effects use backdrop-filter
 - Mobile-optimized with reduced effects
+- GPU acceleration for smooth 60fps
 
 ## 📄 License
 

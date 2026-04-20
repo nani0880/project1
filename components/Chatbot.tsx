@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ChatIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -19,19 +19,18 @@ type Message = {
 
 type ChatStep = 'initial' | 'askedName' | 'askedPhone' | 'completed';
 
-
 const Chatbot: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { sender: 'bot', text: "Hi there! I'm the CFS9 assistant. To get you started, what's your name?" }
+        { sender: 'bot', text: "Hi there! I'm the CFS9 assistant. What's your name?" }
     ]);
     const [inputValue, setInputValue] = useState('');
     const [step, setStep] = useState<ChatStep>('initial');
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
 
     const handleOpen = () => {
@@ -43,7 +42,7 @@ const Chatbot: React.FC = () => {
         setIsClosing(true);
         setTimeout(() => {
             setIsOpen(false);
-        }, 300); // match animation duration
+        }, 300);
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -52,86 +51,77 @@ const Chatbot: React.FC = () => {
 
         const userMessage: Message = { sender: 'user', text: inputValue };
         setMessages(prev => [...prev, userMessage]);
-        
+
         if (step === 'initial') {
             const name = inputValue.trim();
             setTimeout(() => {
-                setMessages(prev => [...prev, { sender: 'bot', text: `Great to meet you, ${name}! What's your phone number?` }]);
+                setMessages(prev => [...prev, { sender: 'bot', text: `Great to meet you, ${name}. What is your phone number?` }]);
                 setStep('askedName');
             }, 500);
         } else if (step === 'askedName') {
             setTimeout(() => {
-                setMessages(prev => [...prev, { sender: 'bot', text: "Thanks! A member of our team will reach out to you shortly. Get ready to transform! 💪" }]);
+                setMessages(prev => [...prev, { sender: 'bot', text: 'Thanks. Our team will reach out shortly to set up your trial.' }]);
                 setStep('completed');
             }, 500);
         }
 
         setInputValue('');
     };
-    
-    const getPlaceholder = () => {
-        switch(step) {
-            case 'initial': return 'Type your name...';
-            case 'askedName': return 'Type your phone number...';
-            default: return 'Our team will be in touch!';
-        }
-    }
 
+    const getPlaceholder = () => {
+        switch (step) {
+            case 'initial':
+                return 'Type your name';
+            case 'askedName':
+                return 'Type your phone number';
+            default:
+                return 'We will be in touch';
+        }
+    };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50">
-            {/* Chat Window */}
+        <div className="chatbot">
             {isOpen && (
-                <div className={`w-80 sm:w-96 h-[500px] bg-gray-900 rounded-2xl shadow-2xl flex flex-col origin-bottom-right ${isClosing ? 'animate-slideOutDown' : 'animate-slideInUp'}`}>
-                    {/* Header */}
-                    <div className="bg-gray-800 p-4 flex justify-between items-center rounded-t-2xl">
+                <div className={`chatbot__window ${isClosing ? 'is-closing' : ''}`}>
+                    <div className="chatbot__header">
                         <div>
-                            <h3 className="text-lg font-bold text-white">CFS9 Assistant</h3>
-                            <p className="text-xs text-red-500">Online</p>
+                            <strong>CFS9 Assistant</strong>
+                            <div className="subhead">Online</div>
                         </div>
-                        <button onClick={handleClose} className="text-gray-400 hover:text-white transition-colors" aria-label="Close chat">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        <button onClick={handleClose} aria-label="Close chat">
+                            x
                         </button>
                     </div>
 
-                    {/* Messages */}
-                    <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+                    <div className="chatbot__messages">
                         {messages.map((msg, index) => (
-                            <div key={index} className={`flex ${msg.sender === 'bot' ? 'justify-start' : 'justify-end'}`}>
-                                <div className={`max-w-[80%] p-3 rounded-xl ${msg.sender === 'bot' ? 'bg-gray-700 text-white rounded-bl-none' : 'bg-red-500 text-white rounded-br-none'}`}>
-                                    <p className="text-sm">{msg.text}</p>
-                                </div>
+                            <div key={index} className={`chatbot__bubble chatbot__bubble--${msg.sender}`}>
+                                {msg.text}
                             </div>
                         ))}
-                         <div ref={messagesEndRef} />
+                        <div ref={messagesEndRef} />
                     </div>
 
-                    {/* Input */}
-                    <div className="p-3 border-t border-gray-700">
-                        <form onSubmit={handleSubmit} className="flex items-center space-x-2">
-                            <input
-                                type="text"
-                                value={inputValue}
-                                onChange={(e) => setInputValue(e.target.value)}
-                                placeholder={getPlaceholder()}
-                                disabled={step === 'completed'}
-                                className="flex-1 w-full bg-gray-800 border-2 border-gray-700 rounded-full py-2 px-4 text-white focus:outline-none focus:border-red-500 transition-colors"
-                            />
-                            <button type="submit" disabled={step === 'completed'} className="bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Send message">
-                                <SendIcon className="w-5 h-5"/>
-                            </button>
-                        </form>
-                    </div>
+                    <form className="chatbot__input" onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder={getPlaceholder()}
+                            disabled={step === 'completed'}
+                        />
+                        <button type="submit" disabled={step === 'completed'} aria-label="Send message">
+                            <SendIcon />
+                        </button>
+                    </form>
                 </div>
             )}
-            
-            {/* Chat Bubble */}
+
             {!isOpen && (
-                 <button onClick={handleOpen} className="bg-red-500 text-white p-4 rounded-full shadow-2xl hover:bg-red-600 transition-all duration-300 transform hover:scale-110 animate-fadeIn" aria-label="Open chat">
-                    <ChatIcon className="w-8 h-8"/>
+                <button onClick={handleOpen} className="chatbot__button" aria-label="Open chat">
+                    <ChatIcon />
                 </button>
             )}
-
         </div>
     );
 };
