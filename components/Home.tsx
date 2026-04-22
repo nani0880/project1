@@ -10,6 +10,7 @@ export const Logo: React.FC<{ className?: string }> = ({ className }) => (
 const Home: React.FC = () => {
     const [videoLoaded, setVideoLoaded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [imageFallback, setImageFallback] = useState(true);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -18,8 +19,10 @@ const Home: React.FC = () => {
         const playVideo = async () => {
             try {
                 await video.play();
+                setImageFallback(false);
             } catch {
                 setVideoLoaded(false);
+                setImageFallback(true);
             }
         };
 
@@ -42,14 +45,19 @@ const Home: React.FC = () => {
                     onLoadedData={() => setVideoLoaded(true)}
                     onError={() => setVideoLoaded(false)}
                     style={{ willChange: 'opacity' }}
+                    poster="/welcome-image.jpg"
                 >
                     <source src="/home-video.mp4" type="video/mp4" />
                 </video>
-                {!videoLoaded && (
+                {imageFallback && (
                     <img
                         src="/welcome-image.jpg"
                         alt="CFS9 Gym training floor"
                         className="hero__fallback"
+                        loading="eager"
+                        decoding="async"
+                        width="1920"
+                        height="1080"
                     />
                 )}
                 <div className="hero__overlay"></div>

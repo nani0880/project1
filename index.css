@@ -43,6 +43,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Optimize image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
+/* Prevent layout shift */
+img[width][height] {
+  height: auto;
+}
+
 /* GPU acceleration for smooth animations */
 .hero__video,
 .hero__overlay,
@@ -59,30 +72,28 @@
 .nav__logo-image,
 .reveal {
   will-change: auto;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  perspective: 1000px;
 }
 
 /* Optimize repaints */
 img, video {
   content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 
 html {
   scroll-behavior: auto;
+  scroll-padding-top: 100px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: auto;
   }
-}
-
-/* Smooth scroll with CSS */
-html {
-  scroll-padding-top: 100px;
 }
 
 a[href^="#"] {
@@ -100,6 +111,7 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 body::before {
@@ -995,6 +1007,7 @@ p {
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
               filter 0.4s ease;
+  background: var(--panel);
 }
 
 .trainer-card:hover img {
@@ -1169,6 +1182,7 @@ p {
   object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
               filter 0.3s ease;
+  background: var(--panel);
 }
 
 .gallery-card:hover img {
@@ -1397,14 +1411,25 @@ p {
   background: var(--accent);
   color: #0a0a0a;
   border-radius: 999px;
-  padding: 14px;
+  padding: 16px;
   box-shadow: 0 20px 40px var(--accent-glow);
   transition: transform 0.2s ease, background 0.2s ease;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot__button svg {
+  width: 28px;
+  height: 28px;
 }
 
 .chatbot__button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   background: var(--accent-bright);
+  box-shadow: 0 25px 50px var(--accent-glow);
 }
 
 .chatbot__window {

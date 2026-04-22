@@ -25,7 +25,7 @@ const WelcomeSplash: React.FC = () => {
     return (
         <div className={`splash ${isAnimating ? '' : 'splash--exit'}`}>
             <div className="splash__card">
-                <img src="/logo.png" alt="CFS9 Logo" className="splash__logo-image" />
+                <img src="/logo.png" alt="CFS9 Logo" className="splash__logo-image" loading="eager" decoding="async" />
                 <Logo className="splash__logo" />
                 <div className="splash__tagline">Train. Transform. Triumph.</div>
                 <div className="splash__bar">

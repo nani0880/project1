@@ -27,22 +27,22 @@ export const PROGRAMS_DATA: Program[] = [
 
 export const TRAINERS_DATA: Trainer[] = [
     {
-        image: 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        image: 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
         name: 'Johnathan Doe',
         specialty: 'Strength & Conditioning'
     },
     {
-        image: 'https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        image: 'https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
         name: 'Jane Smith',
         specialty: 'HIIT & Cardio'
     },
     {
-        image: 'https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        image: 'https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
         name: 'Alex Ray',
         specialty: 'Yoga & Mobility'
     },
     {
-        image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
         name: 'Emily White',
         specialty: 'CrossFit & Functional Fitness'
     }
@@ -67,10 +67,10 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 ];
 
 export const GALLERY_IMAGES: GalleryImage[] = [
-    { src: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man lifting weights' },
-    { src: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man doing pull-ups' },
-    { src: 'https://images.pexels.com/photos/3837464/pexels-photo-3837464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Woman on a rowing machine' },
-    { src: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Man working out with battle ropes' },
-    { src: 'https://images.pexels.com/photos/3076516/pexels-photo-3076516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Dumbbells on a rack' },
-    { src: 'https://images.pexels.com/photos/4761799/pexels-photo-4761799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', alt: 'Group fitness class with kettlebells' }
+    { src: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man lifting weights' },
+    { src: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man doing pull-ups' },
+    { src: 'https://images.pexels.com/photos/3837464/pexels-photo-3837464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Woman on a rowing machine' },
+    { src: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man working out with battle ropes' },
+    { src: 'https://images.pexels.com/photos/3076516/pexels-photo-3076516.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Dumbbells on a rack' },
+    { src: 'https://images.pexels.com/photos/4761799/pexels-photo-4761799.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Group fitness class with kettlebells' }
 ];

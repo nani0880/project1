@@ -7,7 +7,7 @@ const TrainerCard: React.FC<{
     onClick: () => void;
 }> = ({ trainer, onClick }) => (
     <div className="trainer-card reveal" onClick={onClick}>
-        <img src={trainer.image} alt={trainer.name} />
+        <img src={trainer.image} alt={trainer.name} loading="lazy" decoding="async" />
         <div className="trainer-card__info">
             <div className="trainer-card__name">{trainer.name}</div>
             <div className="trainer-card__role">{trainer.specialty}</div>
@@ -79,7 +79,7 @@ const Trainers: React.FC = () => {
                         className={`modal-card ${isClosing ? 'is-closing' : ''}`}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <img src={selectedTrainer.image} alt={selectedTrainer.name} />
+                        <img src={selectedTrainer.image} alt={selectedTrainer.name} loading="lazy" decoding="async" />
                         <div className="modal-content">
                             <h3 className="headline modal-title">
                                 {selectedTrainer.name}

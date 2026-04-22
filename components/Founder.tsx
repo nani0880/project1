@@ -60,8 +60,8 @@ const Founder: React.FC = () => {
                     </div>
 
                     <div className="founder__media reveal">
-                        <img src="/founder/13.jpg" alt="Satish Bachala, founder of CFS9 Gym" />
-                        <img src="/founder/6.jpg" alt="Satish Bachala with Ronnie Coleman" />
+                        <img src="/founder/13.jpg" alt="Satish Bachala, founder of CFS9 Gym" loading="lazy" decoding="async" />
+                        <img src="/founder/6.jpg" alt="Satish Bachala with Ronnie Coleman" loading="lazy" decoding="async" />
                     </div>
                 </div>
 

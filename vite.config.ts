@@ -12,8 +12,20 @@ export default defineConfig({
       },
     },
     minify: 'esbuild',
+    cssMinify: true,
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 1000,
+    reportCompressedSize: false,
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    },
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
 });

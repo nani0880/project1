@@ -74,7 +74,7 @@ const Testimonials: React.FC = () => {
                     </div>
                     <p className="testimonial-text">"{current.text}"</p>
                     <div className="testimonial-author">
-                        <img src={current.image} alt={current.name} />
+                        <img src={current.image} alt={current.name} loading="lazy" decoding="async" />
                         <div>
                             <strong>{current.name}</strong>
                             <div className="subhead">{current.role}</div>

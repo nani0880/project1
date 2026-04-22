@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
         <header className={`site-nav ${scrolled ? 'site-nav--scrolled' : ''}`}>
             <div className="site-container nav__inner">
                 <a href="#home" onClick={() => setMenuOpen(false)} aria-label="CFS9 Home" className="nav__logo-link">
-                    <img src="/logo.png" alt="CFS9 Gym" className="nav__logo-image" />
+                    <img src="/logo.png" alt="CFS9 Gym" className="nav__logo-image" loading="eager" decoding="async" />
                     <Logo />
                 </a>
 

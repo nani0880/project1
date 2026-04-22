@@ -46,7 +46,14 @@ const Gallery: React.FC = () => {
                             onClick={() => setSelectedImage(index)}
                             aria-label={`Open image ${index + 1}`}
                         >
-                            <img src={image.src} alt={image.alt} loading="lazy" />
+                            <img 
+                                src={image.src} 
+                                alt={image.alt} 
+                                loading="lazy" 
+                                decoding="async"
+                                width="400"
+                                height="200"
+                            />
                         </button>
                     ))}
                 </div>

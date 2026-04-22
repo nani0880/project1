@@ -104,7 +104,7 @@ const About: React.FC = () => {
 
                 <div className="about__media">
                     <div className="about__image">
-                        <img src="/gallery/4.jpg" alt="Training floor at CFS9" />
+                        <img src="/gallery/4.jpg" alt="Training floor at CFS9" loading="lazy" decoding="async" />
                     </div>
                     <div className="card about__floating">
                         <h4>Best gym in Jubilee Hills</h4>
