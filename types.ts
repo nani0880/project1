@@ -17,6 +17,7 @@ export interface Testimonial {
     quote: string;
     name: string;
     memberSince: string;
+    image: string;
 }
 
 export interface GalleryImage {

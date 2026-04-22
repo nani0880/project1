@@ -52,25 +52,34 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     {
         quote: "Joining CFS9 was the best decision I've ever made for my health. The trainers are incredibly supportive and the community is motivating!",
         name: 'Priya Sharma',
-        memberSince: 'Member since 2022'
+        memberSince: 'Member since 2022',
+        image: '/gallery/13.jpg'
     },
     {
         quote: "I've seen amazing results in just a few months. The facilities are top-notch and always clean. Highly recommend to anyone serious about fitness.",
         name: 'Rohan Verma',
-        memberSince: 'Member since 2023'
+        memberSince: 'Member since 2023',
+        image: '/gallery/6.jpg'
     },
     {
         quote: "A fantastic gym with a great atmosphere. I've not only improved my physical strength but also my mental well-being. It feels like a second home.",
         name: 'Anika Reddy',
-        memberSince: 'Member since 2021'
+        memberSince: 'Member since 2021',
+        image: '/gallery/13.jpg'
     }
 ];
 
 export const GALLERY_IMAGES: GalleryImage[] = [
-    { src: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man lifting weights' },
-    { src: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man doing pull-ups' },
-    { src: 'https://images.pexels.com/photos/3837464/pexels-photo-3837464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Woman on a rowing machine' },
-    { src: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Man working out with battle ropes' },
-    { src: 'https://images.pexels.com/photos/3076516/pexels-photo-3076516.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Dumbbells on a rack' },
-    { src: 'https://images.pexels.com/photos/4761799/pexels-photo-4761799.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1', alt: 'Group fitness class with kettlebells' }
+    { src: '/gallery/1.jpg', alt: 'Man lifting weights' },
+    { src: '/gallery/2.jpg', alt: 'Man doing pull-ups' },
+    { src: '/gallery/3.jpg', alt: 'Woman on a rowing machine' },
+    { src: '/gallery/4.jpg', alt: 'Man working out with battle ropes' },
+    { src: '/gallery/5.jpg', alt: 'Dumbbells on a rack' },
+    { src: '/gallery/6.jpg', alt: 'Group fitness class with kettlebells' },
+    { src: '/gallery/7.jpg', alt: 'Training session' },
+    { src: '/gallery/8.jpg', alt: 'Gym equipment' },
+    { src: '/gallery/9.jpg', alt: 'Workout area' },
+    { src: '/gallery/10.jpg', alt: 'Fitness training' },
+    { src: '/gallery/11.jpg', alt: 'Strength training' },
+    { src: '/gallery/12.jpg', alt: 'Gym facility' }
 ];

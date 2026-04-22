@@ -12,28 +12,28 @@ const testimonials: Testimonial[] = [
     {
         name: 'Sarah Johnson',
         role: 'Fitness Enthusiast',
-        image: 'https://i.pravatar.cc/150?img=1',
+        image: '/gallery/13.jpg',
         text: 'CFS9 changed how I train. The coaching is precise, and the community keeps me accountable.',
         rating: 5
     },
     {
         name: 'Mike Chen',
         role: 'Professional Athlete',
-        image: 'https://i.pravatar.cc/150?img=13',
+        image: '/gallery/6.jpg',
         text: 'Elite equipment, smart programming, and a team that knows performance. This is where I build.',
         rating: 5
     },
     {
         name: 'Emily Rodriguez',
         role: 'Yoga Instructor',
-        image: 'https://i.pravatar.cc/150?img=5',
+        image: '/gallery/13.jpg',
         text: 'Mobility work and recovery are treated seriously here. I feel stronger and more balanced.',
         rating: 5
     },
     {
         name: 'David Thompson',
         role: 'Business Executive',
-        image: 'https://i.pravatar.cc/150?img=12',
+        image: '/gallery/6.jpg',
         text: 'Flexible hours and clear coaching plans made consistency possible with my schedule.',
         rating: 5
     }
