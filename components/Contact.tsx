@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <strong>Address</strong>
-                                        <div className="subhead">CFS9 Gym, Jubilee Hills, Hyderabad 500033</div>
+                                        <div className="subhead">CFS Gym, Jubilee Hills, Hyderabad 500033</div>
                                     </div>
                                 </div>
 
@@ -113,8 +113,8 @@ const Contact: React.FC = () => {
 
                         <div className="contact__map reveal">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.113264426515!2d78.37397227591325!3d17.45422470123985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9385b0808a97%3A0x2a9693c6f2282e4!2sCFS9%20GYM!5e0!3m2!1sen!2sus!4v1719509890104!5m2!1sen!2sus"
-                                title="CFS9 Gym Location"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.113264426515!2d78.37397227591325!3d17.45422470123985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9385b0808a97%3A0x2a9693c6f2282e4!2sCFS%20GYM!5e0!3m2!1sen!2sus!4v1719509890104!5m2!1sen!2sus"
+                                title="CFS Gym Location"
                                 allowFullScreen={true}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"

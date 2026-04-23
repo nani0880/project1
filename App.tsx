@@ -3,9 +3,9 @@ import WelcomeSplash from './components/WelcomeSplash';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
-import Founder from './components/Founder';
 import Programs from './components/Programs';
 import Trainers from './components/Trainers';
+import Equipment from './components/Equipment';
 import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -23,9 +23,9 @@ const App: React.FC = () => {
             <main className="main">
                 <Home />
                 <About />
-                <Founder />
                 <Programs />
                 <Trainers />
+                <Equipment />
                 <Testimonials />
                 <Gallery />
                 <Contact />

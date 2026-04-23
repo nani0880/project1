@@ -34,8 +34,8 @@ const Navbar: React.FC = () => {
     return (
         <header className={`site-nav ${scrolled ? 'site-nav--scrolled' : ''}`}>
             <div className="site-container nav__inner">
-                <a href="#home" onClick={() => setMenuOpen(false)} aria-label="CFS9 Home" className="nav__logo-link">
-                    <img src="/logo.png" alt="CFS9 Gym" className="nav__logo-image" loading="eager" decoding="async" />
+                <a href="#home" onClick={() => setMenuOpen(false)} aria-label="CFS Home" className="nav__logo-link">
+                    <img src="/logo.png" alt="CFS Gym" className="nav__logo-image" loading="eager" decoding="async" />
                     <Logo />
                 </a>
 
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                         onMouseLeave={() => setAboutOpen(false)}
                     >
                         <button type="button" className="nav__dropdown-button">
-                            About
+                            More
                             <svg
                                 className="nav__dropdown-icon"
                                 viewBox="0 0 24 24"
@@ -65,8 +65,8 @@ const Navbar: React.FC = () => {
                             </svg>
                         </button>
                         <div className={`nav__dropdown-menu ${aboutOpen ? 'is-open' : ''}`}>
-                            <a href="#about" className="nav__dropdown-link">About CFS9</a>
-                            <a href="#founder" className="nav__dropdown-link">Our Founder</a>
+                            <a href="#about" className="nav__dropdown-link">About CFS</a>
+                            <a href="#equipment" className="nav__dropdown-link">Equipment</a>
                         </div>
                     </div>
 
@@ -91,8 +91,7 @@ const Navbar: React.FC = () => {
                             {link.label}
                         </a>
                     ))}
-                    <a href="#about" onClick={() => setMenuOpen(false)}>About CFS9</a>
-                    <a href="#founder" onClick={() => setMenuOpen(false)}>Our Founder</a>
+                    <a href="#about" onClick={() => setMenuOpen(false)}>About CFS</a>
                     <a href="#contact" onClick={() => setMenuOpen(false)} className="btn btn-primary nav__mobile-cta">
                         Join now
                     </a>

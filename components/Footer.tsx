@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 <div>
                     <div className="footer__title">Location</div>
                     <div className="footer__list">
-                        <a href="https://maps.google.com/?q=CFS9+Gym+Jubilee+Hills+Hyderabad" target="_blank" rel="noopener noreferrer">Jubilee Hills, Hyderabad</a>
+                        <a href="https://maps.google.com/?q=CFS+Gym+Jubilee+Hills+Hyderabad" target="_blank" rel="noopener noreferrer">Jubilee Hills, Hyderabad</a>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="site-container footer__bar">
-                <p>&copy; {new Date().getFullYear()} CFS9 Gym. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} CFS Gym. All rights reserved.</p>
             </div>
         </footer>
     );

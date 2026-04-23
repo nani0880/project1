@@ -87,10 +87,10 @@ const About: React.FC = () => {
         <section id="about" ref={sectionRef} className={`section ${isVisible ? 'is-visible' : ''}`}>
             <div className="site-container about__grid">
                 <div>
-                    <p className="eyebrow">About CFS9</p>
+                    <p className="eyebrow">About CFS</p>
                     <h2 className="headline">A training culture built on discipline</h2>
                     <p className="subhead">
-                        CFS9 is a premium fitness destination in Jubilee Hills, Hyderabad. 
+                        CFS is a premium fitness destination in Jubilee Hills, Hyderabad. 
                         We combine elite coaching, modern equipment, and a focused
                         community to deliver transformation.
                     </p>
@@ -104,7 +104,7 @@ const About: React.FC = () => {
 
                 <div className="about__media">
                     <div className="about__image">
-                        <img src="/gallery/4.jpg" alt="Training floor at CFS9" loading="lazy" decoding="async" />
+                        <img src="/our facility/A6706305.JPG.jpeg" alt="Training floor at CFS" loading="lazy" decoding="async" />
                     </div>
                     <div className="card about__floating">
                         <h4>Best gym in Jubilee Hills</h4>
@@ -130,5 +130,5 @@ const About: React.FC = () => {
         </section>
     );
 };
-
 export default About;
+    

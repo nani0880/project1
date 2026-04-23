@@ -1,6 +1,6 @@
-# CFS9 Gym - Futuristic Fitness Experience
+# CFS Gym - Elite Fitness Experience
 
-A cinematic, glassmorphism-driven fitness website featuring scroll-based scene transitions, 3D animations, and premium gold aesthetics for the elite Jubilee Hills location.
+A premium fitness website featuring modern design, smooth animations, and gold aesthetics for the elite Jubilee Hills location.
 
 ## 🚀 Quick Start
 
@@ -20,15 +20,16 @@ npm run preview
 
 ## ✨ Features
 
-- **Cinematic Hero Section**: Full-screen video background with animated glass panels
-- **3D Flip Cards**: Interactive program cards with smooth 3D rotations
-- **Glassmorphism Design**: Transparent glass surfaces throughout with blur effects
-- **Parallax Effects**: Background images and videos with depth
+- **Cinematic Hero Section**: Full-screen video background with animated content
+- **Equipment Showcase**: 6 premium equipment cards with hover effects
+- **Trainer Profiles**: 6 certified trainers with certificate display modals
+- **Gallery Section**: 12 high-quality gym images with lightbox
+- **Glassmorphism Design**: Transparent glass surfaces with blur effects
 - **Gold Luxury Aesthetics**: Premium black and gold color palette
-- **Smooth Scroll Transitions**: Scene-based transitions between sections
-- **Animated Social Bar**: Fixed social media bar with sliding labels
-- **Responsive Design**: Fully optimized for all devices
-- **Performance Optimized**: GPU-accelerated animations and lazy loading
+- **Smooth Animations**: GPU-accelerated transitions and hover effects
+- **Animated Social Bar**: Fixed social media bar with modern design
+- **Responsive Design**: 3-column desktop, 1-column mobile layout
+- **Performance Optimized**: Lazy loading and optimized images
 
 ## 🎨 Design System
 
@@ -39,31 +40,32 @@ npm run preview
 - Charcoal Grey: `#1c1c1c`
 
 ### Typography
-- Headings: Bebas Neue (Bold)
-- Body: Sora (Regular/Medium)
+- Headings: Orbitron (Bold, 700-900)
+- Secondary: Rajdhani (Medium/Bold)
+- Body: Inter (Regular/Medium)
 
 ## 📱 Sections
 
-1. **Home**: Cinematic hero with video background
-2. **About**: Premium training culture and stats
-3. **Founder**: Satish Bachala's story and milestones
-4. **Programs**: Training programs showcase
-5. **Trainers**: Elite coaching team
+1. **Home**: Cinematic hero with video background and stats
+2. **About**: Premium training culture and features
+3. **Programs**: Training programs showcase
+4. **Trainers**: 6 certified trainers with certificate modals
+5. **Equipment**: 6 premium equipment showcases
 6. **Testimonials**: Success stories carousel
-7. **Gallery**: Image grid with glass overlays
-8. **Contact**: Glass form with embedded map
-9. **Footer**: Glass-styled footer with social links
+7. **Gallery**: 12 gym images with lightbox
+8. **Contact**: Contact form with embedded map
+9. **Footer**: Footer with social links and hours
 
 ## 🎬 Motion Features
 
-- Word-by-word animated headlines
-- Scroll-triggered animations
-- 3D card flips on hover
-- Parallax mouse movement
+- Scroll-triggered reveal animations
+- Smooth hover effects with scale transforms
+- Certificate modal with fade animations
 - Count-up stat animations
-- Glass hover effects with glow
-- Smooth section transitions
+- Shimmer text effects on headlines
 - GPU-accelerated transforms
+- Smooth section transitions
+- Elastic easing curves
 
 ## 🔧 Tech Stack
 
@@ -75,7 +77,7 @@ npm run preview
 
 ## 📍 Location
 
-CFS9 Gym - Jubilee Hills, Hyderabad 500033
+CFS Gym - Jubilee Hills, Hyderabad 500033
 
 ## 📝 Notes
 
@@ -87,7 +89,7 @@ CFS9 Gym - Jubilee Hills, Hyderabad 500033
 
 ## 📄 License
 
-© 2024 CFS9 Gym. All Rights Reserved.
+© 2024 CFS Gym. All Rights Reserved.
 
 ---
 

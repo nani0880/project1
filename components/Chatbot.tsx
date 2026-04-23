@@ -23,7 +23,7 @@ const Chatbot: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { sender: 'bot', text: "Hi there! I'm the CFS9 assistant. What's your name?" }
+        { sender: 'bot', text: "Hi there! I'm the CFS assistant. What's your name?" }
     ]);
     const [inputValue, setInputValue] = useState('');
     const [step, setStep] = useState<ChatStep>('initial');
@@ -85,7 +85,7 @@ const Chatbot: React.FC = () => {
                 <div className={`chatbot__window ${isClosing ? 'is-closing' : ''}`}>
                     <div className="chatbot__header">
                         <div>
-                            <strong>CFS9 Assistant</strong>
+                            <strong>CFS Assistant</strong>
                             <div className="subhead">Online</div>
                         </div>
                         <button onClick={handleClose} aria-label="Close chat">

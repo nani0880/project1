@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export const Logo: React.FC<{ className?: string }> = ({ className }) => (
     <div className={`logo ${className || ''}`}>
-        <span>CFS</span>
-        <span className="logo__accent">9</span>
+        <span>CF</span>
+        <span className="logo__accent">S</span>
     </div>
 );
 
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
                 {imageFallback && (
                     <img
                         src="/welcome-image.jpg"
-                        alt="CFS9 Gym training floor"
+                        alt="CFS Gym training floor"
                         className="hero__fallback"
                         loading="eager"
                         decoding="async"
@@ -66,10 +66,10 @@ const Home: React.FC = () => {
             <div className="site-container hero__content">
                 <div>
                     <p className="eyebrow">Jubilee Hills, Hyderabad</p>
-                    <h1 className="hero__title">Forge your strongest self</h1>
+                    <h1 className="hero__title">Transform Your Body</h1>
                     <p className="hero__subtitle">
-                        A premium training space built for results. Power lifting, conditioning,
-                        mobility, and recovery under one roof.
+                        Elite fitness destination with premium equipment, expert trainers, and 
+                        personalized training programs designed for results.
                     </p>
                     <div className="hero__actions">
                         <a href="#contact" className="btn btn-primary">Book a trial</a>
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
 
                 <div className="hero__panel">
                     <div className="card card--glass">
-                        <p className="eyebrow">CFS9 access</p>
+                        <p className="eyebrow">CFS access</p>
                         <h3 className="hero__panel-title">Open day and night</h3>
                         <p className="subhead">
                             Jubilee Hills location. Personal training, group classes,
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
                         <a href="#contact" className="btn btn-outline">Talk to a coach</a>
                     </div>
                     <div className="card card--glass">
-                        <p className="eyebrow">Today at CFS9</p>
+                        <p className="eyebrow">Today at CFS</p>
                         <ul className="hero__schedule">
                             <li>
                                 <span>6:00 AM</span>
