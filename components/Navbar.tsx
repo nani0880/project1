@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
         <header className={`site-nav ${scrolled ? 'site-nav--scrolled' : ''}`}>
             <div className="site-container nav__inner">
                 <a href="#home" onClick={() => setMenuOpen(false)} aria-label="CFS Home" className="nav__logo-link">
-                    <img src="/logo.png" alt="CFS Gym" className="nav__logo-image" loading="eager" decoding="async" />
+                    <img src="/CSF logo.png?v=2" alt="CFS Gym" className="nav__logo-image" loading="eager" decoding="async" />
                     <Logo />
                 </a>
 
@@ -92,6 +92,7 @@ const Navbar: React.FC = () => {
                         </a>
                     ))}
                     <a href="#about" onClick={() => setMenuOpen(false)}>About CFS</a>
+                    <a href="#equipment" onClick={() => setMenuOpen(false)}>Equipment</a>
                     <a href="#contact" onClick={() => setMenuOpen(false)} className="btn btn-primary nav__mobile-cta">
                         Join now
                     </a>

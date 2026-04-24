@@ -7,6 +7,58 @@ export const Logo: React.FC<{ className?: string }> = ({ className }) => (
     </div>
 );
 
+const StatCounter: React.FC<{ end: number; label: string; suffix?: string }> = ({ end, label, suffix = '+' }) => {
+    const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const statRef = useRef<HTMLDivElement>(null);
+    const rafRef = useRef<number>();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (statRef.current) observer.observe(statRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible) return;
+        
+        const startTime = performance.now();
+        const duration = 2000;
+
+        const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            setCount(Math.floor(end * progress));
+            
+            if (progress < 1) {
+                rafRef.current = requestAnimationFrame(animate);
+            }
+        };
+
+        rafRef.current = requestAnimationFrame(animate);
+        return () => {
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        };
+    }, [isVisible, end]);
+
+    return (
+        <div className="stat-card" ref={statRef}>
+            <div className="stat-value">{count}{suffix}</div>
+            <div className="stat-label">{label}</div>
+        </div>
+    );
+};
+
 const Home: React.FC = () => {
     const [videoLoaded, setVideoLoaded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -76,18 +128,9 @@ const Home: React.FC = () => {
                         <a href="#programs" className="btn btn-ghost">View programs</a>
                     </div>
                     <div className="hero__stats">
-                        <div className="stat-card">
-                            <div className="stat-value">500+</div>
-                            <div className="stat-label">Active members</div>
-                        </div>
-                        <div className="stat-card">
-                            <div className="stat-value">15</div>
-                            <div className="stat-label">Elite coaches</div>
-                        </div>
-                        <div className="stat-card">
-                            <div className="stat-value">24/7</div>
-                            <div className="stat-label">Access</div>
-                        </div>
+                        <StatCounter end={500} label="Active members" />
+                        <StatCounter end={15} label="Elite coaches" suffix="" />
+                        <StatCounter end={24} label="Access" suffix="/7" />
                     </div>
                 </div>
 
