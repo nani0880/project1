@@ -1,0 +1,127 @@
+/* Juice Bar Section Styles */
+.juice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.juice-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+  position: relative;
+}
+
+.juice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.juice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+  border-color: var(--accent);
+}
+
+.juice-card:hover::before {
+  opacity: 1;
+}
+
+.juice-card__image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.juice-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--panel);
+}
+
+.juice-card:hover .juice-card__image img {
+  transform: scale(1.1);
+}
+
+.juice-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(212, 175, 55, 0.95);
+  color: var(--bg);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.juice-card__content {
+  padding: 24px;
+}
+
+.juice-card__content h3 {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  color: var(--accent-bright);
+}
+
+.juice-card__description {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.juice-bar__cta {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.juice-bar__cta .card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .juice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .juice-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .juice-card__image {
+    height: 200px;
+  }
+
+  .juice-bar__cta .card {
+    padding: 32px 24px;
+  }
+}

@@ -5,6 +5,7 @@ const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [aboutOpen, setAboutOpen] = useState(false);
+    const dropdownRef = React.useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         let ticking = false;
@@ -23,10 +24,34 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setAboutOpen(false);
+            }
+        };
+
+        if (aboutOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [aboutOpen]);
+
+    // Reset dropdown when mobile menu closes
+    useEffect(() => {
+        if (!menuOpen) {
+            setAboutOpen(false);
+        }
+    }, [menuOpen]);
+
     const navLinks = [
         { href: '#home', label: 'Home' },
         { href: '#programs', label: 'Programs' },
         { href: '#trainers', label: 'Trainers' },
+        { href: '#juice-bar', label: 'Juice Bar' },
         { href: '#testimonials', label: 'Testimonials' },
         { href: '#gallery', label: 'Gallery' },
     ];
@@ -35,7 +60,7 @@ const Navbar: React.FC = () => {
         <header className={`site-nav ${scrolled ? 'site-nav--scrolled' : ''}`}>
             <div className="site-container nav__inner">
                 <a href="#home" onClick={() => setMenuOpen(false)} aria-label="CFS Home" className="nav__logo-link">
-                    <img src="/CSF logo.png?v=2" alt="CFS Gym" className="nav__logo-image" loading="eager" decoding="async" />
+                    <img src="/CFS-logo.png?v=4" alt="CFS Gym" className="nav__logo-image" loading="eager" decoding="async" />
                     <Logo />
                 </a>
 
@@ -47,11 +72,18 @@ const Navbar: React.FC = () => {
                     ))}
 
                     <div
+                        ref={dropdownRef}
                         className="nav__dropdown"
-                        onMouseEnter={() => setAboutOpen(true)}
-                        onMouseLeave={() => setAboutOpen(false)}
                     >
-                        <button type="button" className="nav__dropdown-button">
+                        <button 
+                            type="button" 
+                            className="nav__dropdown-button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setAboutOpen(!aboutOpen);
+                            }}
+                        >
                             More
                             <svg
                                 className="nav__dropdown-icon"
@@ -65,8 +97,8 @@ const Navbar: React.FC = () => {
                             </svg>
                         </button>
                         <div className={`nav__dropdown-menu ${aboutOpen ? 'is-open' : ''}`}>
-                            <a href="#about" className="nav__dropdown-link">About CFS</a>
-                            <a href="#equipment" className="nav__dropdown-link">Equipment</a>
+                            <a href="#about" className="nav__dropdown-link" onClick={() => setAboutOpen(false)}>About CFS</a>
+                            <a href="#equipment" className="nav__dropdown-link" onClick={() => setAboutOpen(false)}>Equipment</a>
                         </div>
                     </div>
 
@@ -91,8 +123,31 @@ const Navbar: React.FC = () => {
                             {link.label}
                         </a>
                     ))}
-                    <a href="#about" onClick={() => setMenuOpen(false)}>About CFS</a>
-                    <a href="#equipment" onClick={() => setMenuOpen(false)}>Equipment</a>
+                    
+                    <div className="nav__mobile-dropdown">
+                        <button 
+                            type="button" 
+                            className="nav__mobile-dropdown-button"
+                            onClick={() => setAboutOpen(!aboutOpen)}
+                        >
+                            More
+                            <svg
+                                className="nav__mobile-dropdown-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                                style={{ transform: aboutOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div className={`nav__mobile-dropdown-content ${aboutOpen ? 'is-open' : ''}`}>
+                            <a href="#about" onClick={() => { setAboutOpen(false); setMenuOpen(false); }}>About CFS</a>
+                            <a href="#equipment" onClick={() => { setAboutOpen(false); setMenuOpen(false); }}>Equipment</a>
+                        </div>
+                    </div>
+                    
                     <a href="#contact" onClick={() => setMenuOpen(false)} className="btn btn-primary nav__mobile-cta">
                         Join now
                     </a>

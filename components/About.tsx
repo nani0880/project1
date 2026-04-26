@@ -50,18 +50,18 @@ const About: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        const observerRef = new IntersectionObserver(
+        const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observerRef.disconnect();
+                    observer.disconnect();
                 }
             },
             { threshold: 0.05, rootMargin: '100px' }
         );
 
-        if (sectionRef.current) observerRef.observe(sectionRef.current);
-        return () => observerRef.disconnect();
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
     }, []);
 
     const features = [

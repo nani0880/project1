@@ -6,6 +6,7 @@ import About from './components/About';
 import Programs from './components/Programs';
 import Trainers from './components/Trainers';
 import Equipment from './components/Equipment';
+import JuiceBar from './components/JuiceBar';
 import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -13,6 +14,7 @@ import Footer from './components/Footer';
 import FloatingSocials from './components/FloatingSocials';
 import Chatbot from './components/Chatbot';
 import SmoothScroll from './components/SmoothScroll';
+
 
 const App: React.FC = () => {
     return (
@@ -26,6 +28,7 @@ const App: React.FC = () => {
                 <Programs />
                 <Trainers />
                 <Equipment />
+                <JuiceBar />
                 <Testimonials />
                 <Gallery />
                 <Contact />

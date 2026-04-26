@@ -30,16 +30,16 @@ const StatCounter: React.FC<{ end: number; label: string; suffix?: string }> = (
 
     useEffect(() => {
         if (!isVisible) return;
-        
+
         const startTime = performance.now();
         const duration = 2000;
 
         const animate = (currentTime: number) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            
+
             setCount(Math.floor(end * progress));
-            
+
             if (progress < 1) {
                 rafRef.current = requestAnimationFrame(animate);
             }
@@ -70,9 +70,12 @@ const Home: React.FC = () => {
 
         const playVideo = async () => {
             try {
+                video.muted = true; // Ensure muted for autoplay
                 await video.play();
+                setVideoLoaded(true);
                 setImageFallback(false);
-            } catch {
+            } catch (error) {
+                console.warn('Video autoplay failed, using fallback image');
                 setVideoLoaded(false);
                 setImageFallback(true);
             }
@@ -120,7 +123,7 @@ const Home: React.FC = () => {
                     <p className="eyebrow">Jubilee Hills, Hyderabad</p>
                     <h1 className="hero__title">Transform Your Body</h1>
                     <p className="hero__subtitle">
-                        Elite fitness destination with premium equipment, expert trainers, and 
+                        Elite fitness destination with premium equipment, expert trainers, and
                         personalized training programs designed for results.
                     </p>
                     <div className="hero__actions">
