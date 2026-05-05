@@ -102,7 +102,7 @@ const Home: React.FC = () => {
                     style={{ willChange: 'opacity' }}
                     poster="/welcome-image.jpg"
                 >
-                    <source src="/for-website.mp4" type="video/mp4" />
+                    <source src="https://pqmveq2athjp8fbq.public.blob.vercel-storage.com/for-website.mp4" type="video/mp4" />
                 </video>
                 {imageFallback && (
                     <img

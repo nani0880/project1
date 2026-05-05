@@ -18,8 +18,8 @@ build
 .env.local
 .env.production
 
-# Large media files (videos)
-*.mp4
+# Large media files (videos) - excluding specific videos we need
+# *.mp4
 *.mov
 *.avi
 *.webm
