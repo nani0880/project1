@@ -70,7 +70,8 @@ const Home: React.FC = () => {
 
         const playVideo = async () => {
             try {
-                video.muted = true; // Ensure muted for autoplay
+                video.muted = true;
+                video.playbackRate = 1.0; // Ensure normal playback speed
                 await video.play();
                 setVideoLoaded(true);
                 setImageFallback(false);
@@ -81,9 +82,16 @@ const Home: React.FC = () => {
             }
         };
 
-        // Delay video load to prioritize initial render
-        const timer = setTimeout(playVideo, 100);
-        return () => clearTimeout(timer);
+        // Immediate video load for smooth playback
+        if (video.readyState >= 3) {
+            playVideo();
+        } else {
+            video.addEventListener('canplay', playVideo, { once: true });
+        }
+
+        return () => {
+            video.removeEventListener('canplay', playVideo);
+        };
     }, []);
 
     return (
@@ -95,11 +103,10 @@ const Home: React.FC = () => {
                     loop
                     muted
                     playsInline
-                    preload="none"
+                    preload="auto"
                     className={`hero__video ${videoLoaded ? 'is-loaded' : ''}`}
                     onLoadedData={() => setVideoLoaded(true)}
                     onError={() => setVideoLoaded(false)}
-                    style={{ willChange: 'opacity' }}
                     poster="/welcome-image.jpg"
                 >
                     <source src="https://pqmveq2athjp8fbq.public.blob.vercel-storage.com/for-website.mp4" type="video/mp4" />

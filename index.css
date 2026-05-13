@@ -954,8 +954,13 @@ p {
 .hero__video {
   filter: brightness(0.85) saturate(1.2) contrast(1.05);
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.8s ease;
   pointer-events: none;
+  will-change: opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .hero__video.is-loaded {
@@ -1432,75 +1437,37 @@ p {
   background: var(--bg-alt);
 }
 
-.testimonial-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 32px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+.instagram-reel-container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.testimonial-card.is-animating {
-  transform: scale3d(0.98, 0.98, 1);
-  opacity: 0.7;
-}
-
-.rating {
+.instagram-reel-card {
+  padding: 28px;
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.rating-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent-glow);
-}
-
-.testimonial-text {
-  font-size: 1.2rem;
+.instagram-reel-card .card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--ink);
-  text-align: center;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+.instagram-reel-embed {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--line);
 }
 
-.testimonial-author img {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-dark);
-}
-
-.testimonial-nav {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.testimonial-nav button {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba(245, 241, 233, 0.2);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.testimonial-nav button.is-active {
-  background: var(--accent);
-  transform: scale(1.2);
+.instagram-reel-embed iframe {
+  display: block;
+  border-radius: 16px;
 }
 
 .gallery-grid {
@@ -2527,6 +2494,15 @@ p {
 
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Instagram reel mobile */
+  .instagram-reel-container {
+    max-width: 100%;
+  }
+  
+  .instagram-reel-embed iframe {
+    height: 480px;
   }
 
   .floating-socials {
