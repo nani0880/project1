@@ -7,9 +7,8 @@ interface SocialLinkProps {
 }
 
 const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
-    <a className="social-pill" href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+    <a className="social-pill" href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
         {icon}
-        <span>{label}</span>
     </a>
 );
 

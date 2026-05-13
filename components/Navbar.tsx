@@ -24,6 +24,18 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Prevent body scroll when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [menuOpen]);
+
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -50,7 +62,6 @@ const Navbar: React.FC = () => {
     const navLinks = [
         { href: '#home', label: 'Home' },
         { href: '#programs', label: 'Programs' },
-        { href: '#trainers', label: 'Trainers' },
         { href: '#juice-bar', label: 'Juice Bar' },
         { href: '#testimonials', label: 'Testimonials' },
         { href: '#gallery', label: 'Gallery' },
@@ -127,7 +138,7 @@ const Navbar: React.FC = () => {
                     <div className="nav__mobile-dropdown">
                         <button 
                             type="button" 
-                            className="nav__mobile-dropdown-button"
+                            className={`nav__mobile-dropdown-button ${aboutOpen ? 'is-open' : ''}`}
                             onClick={() => setAboutOpen(!aboutOpen)}
                         >
                             More
@@ -137,7 +148,6 @@ const Navbar: React.FC = () => {
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth={2}
-                                style={{ transform: aboutOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
                             </svg>

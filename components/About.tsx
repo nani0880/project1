@@ -94,12 +94,6 @@ const About: React.FC = () => {
                         We combine elite coaching, modern equipment, and a focused
                         community to deliver transformation.
                     </p>
-
-                    <div className="about__stats">
-                        <StatCounter end={500} label="Members" start={isVisible} />
-                        <StatCounter end={15} label="Coaches" start={isVisible} />
-                        <StatCounter end={1000} label="Success stories" start={isVisible} />
-                    </div>
                 </div>
 
                 <div className="about__media">

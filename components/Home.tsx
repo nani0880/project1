@@ -131,16 +131,16 @@ const Home: React.FC = () => {
                         <a href="#programs" className="btn btn-ghost">View programs</a>
                     </div>
                     <div className="hero__stats">
-                        <StatCounter end={500} label="Active members" />
-                        <StatCounter end={15} label="Elite coaches" suffix="" />
-                        <StatCounter end={24} label="Access" suffix="/7" />
+                        <StatCounter end={700} label="Active members" />
+                        <StatCounter end={25} label="Elite coaches" suffix="" />
+                        <StatCounter end={2000} label="Success stories" />
                     </div>
                 </div>
 
                 <div className="hero__panel">
                     <div className="card card--glass">
                         <p className="eyebrow">CFS access</p>
-                        <h3 className="hero__panel-title">Open day and night</h3>
+                        <h3 className="hero__panel-title">Premium Fitness Experience</h3>
                         <p className="subhead">
                             Jubilee Hills location. Personal training, group classes,
                             nutrition support, and recovery zones.
@@ -154,19 +154,15 @@ const Home: React.FC = () => {
                         <a href="#contact" className="btn btn-outline">Talk to a coach</a>
                     </div>
                     <div className="card card--glass">
-                        <p className="eyebrow">Today at CFS</p>
+                        <p className="eyebrow">Gym Timings</p>
                         <ul className="hero__schedule">
                             <li>
-                                <span>6:00 AM</span>
-                                Power Lift Lab
+                                <span>MON - SAT</span>
+                                5:30 AM – 10:00 PM
                             </li>
                             <li>
-                                <span>12:00 PM</span>
-                                Mobility Reset
-                            </li>
-                            <li>
-                                <span>7:00 PM</span>
-                                Conditioning Circuit
+                                <span>SUNDAY</span>
+                                5:30 AM – 2:00 PM
                             </li>
                         </ul>
                     </div>
