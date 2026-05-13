@@ -8,7 +8,7 @@ interface Equipment {
 
 const EQUIPMENT_DATA: Equipment[] = [
     {
-        image: '/gym equipment/A6706672.JPG.jpeg',
+        image: '/gym equipment/A6706681.JPG.jpeg',
         name: 'Treadmill',
         description: 'High-performance cardio machines with advanced tracking and customizable programs for endurance training.'
     },
@@ -18,12 +18,12 @@ const EQUIPMENT_DATA: Equipment[] = [
         description: 'Complete range from 2.5kg to 50kg for strength training, muscle building, and functional fitness.'
     },
     {
-        image: '/gym equipment/A6706681.JPG.jpeg',
+        image: '/gym equipment/IMG_20260423_085330.jpg.jpeg',
         name: 'Bench Press',
         description: 'Professional-grade benches for chest, shoulder, and tricep development with safety features.'
     },
     {
-        image: '/gym equipment/A6706700.jpg.jpeg',
+        image: '/gym equipment/A6706672.JPG.jpeg',
         name: 'Squat Rack',
         description: 'Heavy-duty power racks with adjustable safety bars for squats, deadlifts, and compound movements.'
     },
@@ -33,9 +33,9 @@ const EQUIPMENT_DATA: Equipment[] = [
         description: 'Multi-functional cable systems for targeted muscle isolation and full-body workouts.'
     },
     {
-        image: '/gym equipment/IMG_20260423_085330.jpg.jpeg',
-        name: 'Rowing Machine',
-        description: 'Full-body cardio equipment for building endurance, strength, and burning calories efficiently.'
+        image: '/gym equipment/A6706700.jpg.jpeg',
+        name: 'Leg Press',
+        description: 'Heavy-duty leg press machines for building lower body strength, power, and muscle development.'
     }
 ];
 
